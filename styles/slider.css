@@ -60,6 +60,7 @@
 }
 
 .slider-title {
+    z-index: 102;
     font-family: "Angry", sans-serif;
     font-weight: 400;
     font-size: 110px;

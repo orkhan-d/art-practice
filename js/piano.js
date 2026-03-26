@@ -9,7 +9,7 @@ pianoKeys.forEach((key) => {
 		
 		if (pianoDisplay.textContent.length < 4) {
 			pianoDisplay.textContent = pianoDisplay.textContent.trim() + note;
-			playNote(note);
+			// playNote(note);
 		} else {
 			// TODO: find another sound
 		}
