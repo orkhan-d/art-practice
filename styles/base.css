@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Angry', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+:root {
+    --primary: rgba(255, 51, 235, 1);
+    --bg: rgba(0, 0, 0, 1);
+    --text: rgba(255, 255, 255, 1);
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}

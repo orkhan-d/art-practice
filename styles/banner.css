@@ -1,0 +1,56 @@
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 4px;
+}
+
+.title h1 {
+    display: inline-block;
+    vertical-align: bottom;
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 164px;
+    letter-spacing: 2%;
+
+    line-height: 1;
+    text-box-edge: cap alphabetic;
+    text-box-trim: trim-both;
+}
+
+.title .slider {
+    background: var(--primary);
+    width: 355px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    .slider-title {
+        left: -177px;
+        font-family: "Manrope", sans-serif;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 120%;
+        letter-spacing: 2%;
+        white-space: nowrap;
+        margin-left: -187px;
+    }
+
+    .slider-description {
+        color: var(--bg);
+        left: -107px;
+        font-family: "Manrope", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 2%;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-bottom: 12px;
+        margin-left: -107px;
+    }
+}
