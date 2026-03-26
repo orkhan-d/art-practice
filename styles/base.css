@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Angry', sans-serif;
+    user-select: none;
 }
 
 body {
@@ -18,5 +19,24 @@ body {
 
 .wrapper {
     max-width: 1440px;
+    overflow: hidden;
     margin: 0 auto;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.glasses-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 0.1s ease;
 }

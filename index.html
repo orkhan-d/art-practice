@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/fonts.css">
 
     <link rel="stylesheet" href="styles/title.css">
+    <link rel="stylesheet" href="styles/banner.css">
 </head>
 <body>
     <div class="wrapper">
@@ -18,6 +19,26 @@
             </div>
             <h1>РАНГО</h1>
         </div>
+
+        <div class="banner">
+            <div class="banner-content">
+                <h1 class="banner-title">НАСТРОЙ СЕБЯ САМ</h1>
+                <button class="banner-button">ВВЕДИТЕ СВОЙ РАНГО-АЙДИ</button>
+            </div>
+            <div class="glasses-rotator-block">
+                <div class="glasses-rotator-wrapper">
+                    <div class="glasses-rotator">
+                        <img class="glasses-rotator-svg" src="assets/svg/rotator.svg" alt="glasses-rotator-svg"/>
+                    </div>
+                    <p id="glasses-rotator-value">0%</p>
+                </div>
+                <p class="glasses-rotator-title">ОЧКИ</p>
+            </div>
+        </div>
     </div>
+
+    <div class="glasses-overlay"></div>
+
+    <script src="js/glasses-rotator.js"></script>
 </body>
 </html>

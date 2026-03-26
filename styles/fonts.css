@@ -5,6 +5,17 @@
     src: url('../fonts/angry/Angry.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/manrope/Manrope-Bold.ttf') format('truetype');
+}
+
 .angry {
     font-family: 'Angry', sans-serif;
+}
+
+.manrope {
+    font-family: 'Manrope', sans-serif;
 }
