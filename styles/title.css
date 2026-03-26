@@ -4,6 +4,7 @@
     align-items: stretch;
     justify-content: center;
     gap: 4px;
+    margin-top: 40px;
 }
 
 .title h1 {

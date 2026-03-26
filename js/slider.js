@@ -15,6 +15,8 @@ sliderGoodWrapper.style.clipPath = `inset(0 ${track.offsetWidth-initialPosition}
 sliderBadWrapper.style.clipPath = `inset(0 0 0 ${initialPosition}px)`;
 separator.style.left = `${initialPosition}px`;
 
+const separatorWidth = separator.getBoundingClientRect().width;
+
 
 thumb.addEventListener("mousedown", (e) => {
 	isSliderDragging = true;
@@ -38,8 +40,8 @@ const onMouseMove = (e) => {
 	console.log(newPosition);
 
 	thumb.style.left = `${newPosition}px`;
-	sliderGoodWrapper.style.clipPath = `inset(0 ${track.offsetWidth-newPosition}px 0 0)`;
-	sliderBadWrapper.style.clipPath = `inset(0 0 0 ${newPosition}px)`;
+	sliderGoodWrapper.style.clipPath = `inset(0 ${track.offsetWidth-newPosition + separatorWidth/2}px 0 0)`;
+	sliderBadWrapper.style.clipPath = `inset(0 0 0 ${newPosition + separatorWidth/2}px)`;
 	separator.style.left = `${newPosition}px`;
 };
 

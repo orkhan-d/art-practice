@@ -1,0 +1,74 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 150px;
+    gap: 20px;
+}
+
+.footer-main {
+    align-self: flex-end;
+    text-align: start;
+    font-family: "Angry", sans-serif;
+    font-weight: 400;
+    font-size: 110px;
+    line-height: 100%;
+    letter-spacing: 2%;
+
+    span {
+        color: var(--primary);
+    }
+}
+
+
+.footer-secondary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-secondary-date {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    opacity: 30%;
+    white-space: nowrap;
+}
+
+.footer-secondary-reward {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 2%;
+    width: 30%;
+    margin-left: auto;
+}
+
+.trash {
+    margin-top: 200px;
+    align-self: center;
+
+    position: relative;
+    height: 800px;
+    width: 100%;
+
+    .trash-icon {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        width: 40vw;
+    }
+
+    .trash-glasses {
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        width: 20%;
+    }
+}
