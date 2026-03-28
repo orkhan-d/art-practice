@@ -13,7 +13,7 @@
     line-height: 100%;
     letter-spacing: 2%;
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         font-size: 40px;
     }
 }
@@ -36,7 +36,7 @@
     background: var(--primary);
     z-index: 1;
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         opacity: 0;
     }
 }
@@ -106,12 +106,12 @@
         line-height: 100%;
         letter-spacing: 2%;
 
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 779px) {
             font-size: 24px;
         }
     }
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         width: 40vw;
         height: 40vw;
         padding: 12px;
@@ -127,7 +127,7 @@
     align-self: center;
     margin-top: 250px;
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         margin-top: 5vh;
     }
 
@@ -159,7 +159,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         left: 10px;
         transform: translateX(0);
     }
@@ -177,7 +177,7 @@
 
     margin-bottom: 150px;
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         margin-bottom: 0;
         height: 30vh;
         position: relative;
@@ -195,7 +195,7 @@
             transform: translateX(calc(50% + 180px)) translateY(35px) !important;
         }
 
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 779px) {
             position: absolute;
             left: calc(40vw + 20px) !important;
             top: 50%;
@@ -220,7 +220,7 @@
     transform: translateY(-50%);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 779px) {
     .social-elevator-level-info-card {
         left: calc(40vw + 20px) !important;
         width: calc(100vw - 40vw - 30px) !important;
@@ -255,7 +255,7 @@
         line-height: 100%;
         letter-spacing: 2%;
 
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 779px) {
             font-size: 20px;
         }
     }
@@ -272,13 +272,13 @@
             background: var(--bg);
         }
 
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 779px) {
             font-size: 16px;
         }
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 779px) {
     .social-elevator-level {
         width: 100vw !important;
     }
@@ -289,7 +289,7 @@
     height: 200px;
     background: rgba(239, 48, 220, 1);
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         height: 15vh;
     }
 }
@@ -300,7 +300,7 @@
     background: var(--primary);
     opacity: 0.8;
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         height: 15vh;
     }
 }
@@ -311,7 +311,7 @@
     background: var(--primary);
     opacity: 0.7;
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         height: 30vh;
     }
 }
@@ -322,7 +322,7 @@
     background: var(--primary);
     opacity: 0.6;
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         height: 30vh;
     }
 }
@@ -333,7 +333,7 @@
     background: var(--primary);
     opacity: 0.4;
 
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 779px) {
         height: 30vh;
     }
 }
