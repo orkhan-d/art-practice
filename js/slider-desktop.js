@@ -20,7 +20,7 @@ sliderGoodWrapper.style.clipPath = `inset(0 ${track.offsetWidth - initialPositio
 sliderGoodTitle.style.clipPath = `inset(0 ${track.offsetWidth - initialPosition - separatorWidth / 2}px 0 0)`;
 sliderBadWrapper.style.clipPath = `inset(0 0 0 ${initialPosition + separatorWidth / 2}px)`;
 sliderBadTitle.style.clipPath = `inset(0 0 0 ${initialPosition + separatorWidth / 2}px)`;
-separator.style.left = `${initialPosition}px`;
+separator.style.left = `${initialPosition - separatorWidth / 2}px`;
 
 
 thumb.addEventListener("mousedown", (e) => {
@@ -29,6 +29,14 @@ thumb.addEventListener("mousedown", (e) => {
 	position = e.clientX - thumb.offsetLeft;
 	document.addEventListener("mousemove", onMouseMove);
 	document.addEventListener("mouseup", onMouseUp);
+});
+
+thumb.addEventListener("touchstart", (e) => {
+	isSliderDragging = true;
+	e.preventDefault();
+	position = e.touches[0].clientX - thumb.offsetLeft;
+	document.addEventListener("touchmove", onMouseMove);
+	document.addEventListener("touchend", onMouseUp);
 });
 
 
@@ -48,11 +56,14 @@ const onMouseMove = (e) => {
 	
 	sliderBadTitle.style.clipPath = `inset(0 0 0 ${newPosition + separatorWidth / 2}px)`;
 	sliderBadWrapper.style.clipPath = `inset(0 0 0 ${newPosition + separatorWidth / 2}px)`;
-	separator.style.left = `${newPosition}px`;
+	separator.style.left = `${newPosition - separatorWidth / 2}px`;
 };
 
 const onMouseUp = () => {
 	isSliderDragging = false;
 	document.removeEventListener("mousemove", onMouseMove);
 	document.removeEventListener("mouseup", onMouseUp);
+	
+	document.removeEventListener("touchmove", onMouseMove);
+	document.removeEventListener("touchend", onMouseUp);
 };
