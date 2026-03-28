@@ -4,7 +4,14 @@
     align-items: stretch;
     justify-content: center;
     gap: 4px;
+    width: 100%;
+
     margin-top: 40px;
+
+    @media screen and (max-width: 375px) {
+        margin: 0;
+        padding: 10px;
+    }
 }
 
 .title h1 {
@@ -13,9 +20,13 @@
     color: var(--primary);
     font-weight: 400;
     font-size: 164px;
-    letter-spacing: 2%;
+    @media screen and (max-width: 375px) {
+        font-size: 96px;
+    }
 
+    letter-spacing: 2%;
     line-height: 1;
+
     text-box-edge: cap alphabetic;
     text-box-trim: trim-both;
 }
@@ -29,6 +40,10 @@
     justify-content: space-between;
 
     overflow: hidden;
+
+    @media screen and (max-width: 375px) {
+        display: none;
+    }
 
     .slider-title {
         left: -177px;

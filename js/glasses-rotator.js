@@ -73,3 +73,20 @@ function updateRotation(e) {
 rotatorElement.addEventListener('mousedown', mouseDown);
 rotatorElement.addEventListener('mousemove', mouseMove);
 rotatorElement.addEventListener('mouseup', mouseUp);
+
+// add touch support
+rotatorElement.addEventListener('touchstart', (e) => {
+	e.preventDefault();
+	isDragging = true;
+	updateRotation(e.touches[0]);
+});
+
+rotatorElement.addEventListener('touchmove', (e) => {
+	if (!isDragging) return;
+	e.preventDefault();
+	updateRotation(e.touches[0]);
+});
+
+rotatorElement.addEventListener('touchend', () => {
+	isDragging = false;
+});

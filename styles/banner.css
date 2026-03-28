@@ -1,11 +1,19 @@
 .banner {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 4px;
 
+    flex-direction: row;
     margin-top: 65px;
+    width: 100%;
+
+    @media (max-width: 375px) {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        margin-top: 0;
+    }
 
     .banner-content {
         display: flex;
@@ -15,12 +23,22 @@
         gap: 8px;
         width: min-content;
 
+        @media (max-width: 375px) {
+            width: fit-content;
+        }
+
         .banner-title {
             font-family: "Angry", sans-serif;
             font-weight: 400;
-            font-size: 110px;
             line-height: 1;
             letter-spacing: 2%;
+
+            font-size: 110px;
+            @media (max-width: 375px) {
+                padding: 10px;
+                font-size: 48px;
+                width: fit-content;
+            }
         }
 
         .banner-button {
@@ -29,9 +47,24 @@
             font-size: 40px;
             line-height: 100%;
             letter-spacing: 2%;
-            padding: 10px 48px;
             background: var(--primary);
+            color: var(--text);
+
+            padding: 10px 48px;
             white-space: nowrap;
+
+            @media (min-width: 1440px) {
+                br {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 375px) {
+                width: 100%;
+                text-align: start;
+                padding: 12px;
+                font-size: 24px;
+            }
         }
     }
 
@@ -41,6 +74,16 @@
         align-items: center;
         justify-content: center;
         gap: 24px;
+
+        @media (min-width: 1440px) {
+            margin-right: 40px;
+        }
+
+        @media (max-width: 375px) {
+            margin-right: 16px;
+            margin-top: -60px;
+            align-self: flex-end;
+        }
 
         .glasses-rotator-wrapper {
             position: relative;
@@ -60,6 +103,13 @@
             .glasses-rotator {
                 padding: 10px;
                 transform-origin: center;
+
+                @media (max-width: 375px) {
+                    .glasses-rotator-svg {
+                        width: 160px;
+                        height: auto;
+                    }
+                }
             }
         }
 
@@ -69,6 +119,10 @@
             font-size: 40px;
             line-height: 100%;
             letter-spacing: 2%;
+
+            @media (max-width: 375px) {
+                display: none;
+            }
         }
     }
 }
