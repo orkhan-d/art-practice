@@ -1,4 +1,4 @@
-const socialElevatorProfileName = document.querySelector(".social-elevator-profile-name");
+const socialElevatorProfileName = document.querySelector(".social-elevator-profile-name.actual");
 
 // observe the parent of the text node, not the text node itself
 const parentObserver = new MutationObserver(() => {
@@ -6,14 +6,17 @@ const parentObserver = new MutationObserver(() => {
 });
 
 parentObserver.observe(pianoDisplay, {
-    childList: true,      // catches when inner text nodes change
-    subtree: true         // optional, but helps with nested changes
+    childList: true,
+    subtree: true
 });
 
 
 const elevator = document.querySelector(".social-elevator");
 const profile = document.querySelector(".social-elevator-profile");
 const target = document.querySelector(".social-elevator-target");
+
+const profileNonTargetElements = document.querySelectorAll(".social-elevator-profile-wrapper :not(.target)");
+const profileTargetElements = document.querySelectorAll(".social-elevator-profile-wrapper .target");
 
 const elevatorLevelCards = document.querySelectorAll(".social-elevator-level-info-card");
 
@@ -32,6 +35,16 @@ const moveElevator = () => {
         profile.style.position = "absolute";
         profile.style.top = "0";
     }
+    
+    const offsetPercent = (profile.getBoundingClientRect().top - elevator.getBoundingClientRect().top) / (target.getBoundingClientRect().top - elevator.getBoundingClientRect().top);
+    const offsetPercentClamped = Math.max(0, Math.min(1, offsetPercent));
+    
+    profileNonTargetElements.forEach(el => {
+        el.style.opacity = 1 - offsetPercentClamped;
+    });
+    profileTargetElements.forEach(el => {
+        el.style.opacity = offsetPercentClamped;
+    });
 }
 
 const changeCardOpacity = () => {

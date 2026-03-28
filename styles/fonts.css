@@ -12,6 +12,14 @@
     src: url('../fonts/manrope/Manrope-Bold.ttf') format('truetype');
 }
 
+
+@font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/manrope/Manrope-Regular.ttf') format('truetype');
+}
+
 .angry {
     font-family: 'Angry', sans-serif;
 }

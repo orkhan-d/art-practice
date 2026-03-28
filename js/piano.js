@@ -3,7 +3,6 @@ const pianoKeys = document.querySelectorAll(".piano-key");
 
 pianoKeys.forEach((key) => {
 	key.addEventListener("click", (e) => {
-		console.log(key);
 		e.preventDefault();
 		e.stopPropagation();
 		const note = key.getAttribute("data-note");

@@ -12,6 +12,10 @@
     font-size: 110px;
     line-height: 100%;
     letter-spacing: 2%;
+
+    @media screen and (max-width: 375px) {
+        font-size: 40px;
+    }
 }
 
 .social-elevator {
@@ -31,6 +35,10 @@
     width: 31px;
     background: var(--primary);
     z-index: 1;
+
+    @media screen and (max-width: 375px) {
+        opacity: 0;
+    }
 }
 
 .blocks {
@@ -48,12 +56,6 @@
 }
 
 .social-elevator-profile {
-    z-index: 20;
-    height: 250px;
-    width: 250px;
-    padding: 25px;
-    background: var(--primary);
-
     .social-elevator-profile-wrapper {
         position: relative;
         width: 100%;
@@ -66,15 +68,21 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 1;
+        }
+
+        .social-elevator-top-text {
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        img.target {
+            mix-blend-mode: difference;
         }
 
         .social-elevator-profile-name {
-            font-family: "Angry", sans-serif;
-            font-weight: 400;
-            font-size: 40px;
-            line-height: 100%;
-            letter-spacing: 2%;
-
             position: absolute;
             bottom: 0;
             left: 50%;
@@ -83,14 +91,45 @@
     }
 }
 
-.social-elevator-target {
+.social-elevator-profile, .social-elevator-target {
     z-index: 20;
     height: 250px;
     width: 250px;
     padding: 25px;
     background: var(--primary);
+
+    p {
+        z-index: 10;
+        font-family: "Angry", sans-serif;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 2%;
+
+        @media screen and (max-width: 375px) {
+            font-size: 24px;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        width: 40vw;
+        height: 40vw;
+        padding: 12px;
+    }
+}
+
+.social-elevator-target {
+    opacity: 0;
+}
+
+.social-elevator-target {
+    opacity: 0;
     align-self: center;
     margin-top: 250px;
+
+    @media screen and (max-width: 375px) {
+        margin-top: 5vh;
+    }
 
     .social-elevator-target-wrapper {
         position: relative;
@@ -112,15 +151,6 @@
             object-fit: cover;
             mix-blend-mode: difference;
         }
-
-        .social-elevator-target-text {
-            z-index: 20;
-            font-family: "Angry", sans-serif;
-            font-weight: 400;
-            font-size: 40px;
-            line-height: 100%;
-            letter-spacing: 2%;
-        }
     }
 }
 
@@ -128,6 +158,11 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
+    @media screen and (max-width: 375px) {
+        left: 10px;
+        transform: translateX(0);
+    }
 }
 
 /* add mb to first block */
@@ -136,14 +171,18 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-
     align-self: center;
-
     width: fit-content;
-
     position: static;
 
     margin-bottom: 150px;
+
+    @media screen and (max-width: 375px) {
+        margin-bottom: 0;
+        height: 30vh;
+        position: relative;
+        width: 100vw;
+    }
 
     .social-elevator-level-1 {
         opacity: 0 !important;
@@ -151,7 +190,19 @@
 
     .social-elevator-level-info-card {
         position: static;
-        transform: translateX(calc(50% + 180px)) translateY(35px) !important;
+
+        @media screen and (min-width: 376px) {
+            transform: translateX(calc(50% + 180px)) translateY(35px) !important;
+        }
+
+        @media screen and (max-width: 375px) {
+            position: absolute;
+            left: calc(40vw + 20px) !important;
+            top: 50%;
+            width: calc(100vw - 40vw - 30px) !important;
+            transform: translateY(-50%) !important;
+            height: auto !important;
+        }
     }
 }
 
@@ -169,6 +220,16 @@
     transform: translateY(-50%);
 }
 
+@media screen and (max-width: 375px) {
+    .social-elevator-level-info-card {
+        left: calc(40vw + 20px) !important;
+        width: calc(100vw - 40vw - 30px) !important;
+        height: auto !important;
+        top: 50%;
+        transform: translateY(-50%) !important;
+    }
+}
+
 .social-elevator-level-info-card {
     padding: 20px 25px;
     z-index: 10;
@@ -178,6 +239,8 @@
     justify-content: center;
     align-items: flex-start;
     background: var(--text);
+
+    gap: 10px;
 
     height: 180px;
 
@@ -191,6 +254,10 @@
         font-size: 31px;
         line-height: 100%;
         letter-spacing: 2%;
+
+        @media screen and (max-width: 375px) {
+            font-size: 20px;
+        }
     }
 
     .social-elevator-level-description {
@@ -204,6 +271,16 @@
             color: var(--bg);
             background: var(--bg);
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .social-elevator-level {
+        width: 100vw !important;
     }
 }
 
@@ -211,6 +288,10 @@
     width: 360px;
     height: 200px;
     background: rgba(239, 48, 220, 1);
+
+    @media screen and (max-width: 375px) {
+        height: 15vh;
+    }
 }
 
 .social-elevator-level-2 {
@@ -218,6 +299,10 @@
     height: 200px;
     background: var(--primary);
     opacity: 0.8;
+
+    @media screen and (max-width: 375px) {
+        height: 15vh;
+    }
 }
 
 .social-elevator-level-3 {
@@ -225,6 +310,10 @@
     height: 450px;
     background: var(--primary);
     opacity: 0.7;
+
+    @media screen and (max-width: 375px) {
+        height: 30vh;
+    }
 }
 
 .social-elevator-level-4 {
@@ -232,6 +321,10 @@
     height: 450px;
     background: var(--primary);
     opacity: 0.6;
+
+    @media screen and (max-width: 375px) {
+        height: 30vh;
+    }
 }
 
 .social-elevator-level-5 {
@@ -239,4 +332,8 @@
     height: 600px;
     background: var(--primary);
     opacity: 0.4;
+
+    @media screen and (max-width: 375px) {
+        height: 30vh;
+    }
 }
