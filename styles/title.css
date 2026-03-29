@@ -8,9 +8,18 @@
 
     margin-top: 40px;
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: 900px) {
         margin: 0;
         padding: 10px;
+    }
+}
+
+.title .title-logo {
+    height: 100%;
+    margin-right: 12px;
+
+    @media screen and (max-width: 900px) {
+        display: none;
     }
 }
 
@@ -20,7 +29,7 @@
     color: var(--primary);
     font-weight: 400;
     font-size: 164px;
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: 900px) {
         font-size: 96px;
     }
 
@@ -41,32 +50,44 @@
 
     overflow: hidden;
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: 900px) {
         display: none;
     }
 
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 2%;
+    white-space: nowrap;
+
     .slider-title {
-        left: -177px;
-        font-family: "Manrope", sans-serif;
-        font-weight: 700;
+        display: inline-block;
+        width: fit-content;
+
         font-size: 64px;
         line-height: 120%;
         letter-spacing: 2%;
         white-space: nowrap;
-        margin-left: -187px;
+        animation: marquee 8s linear infinite;
     }
 
     .slider-description {
+        display: inline-block;
+        width: fit-content;
+
         color: var(--bg);
-        left: -107px;
-        font-family: "Manrope", sans-serif;
-        font-weight: 700;
         font-size: 24px;
-        line-height: 120%;
-        letter-spacing: 2%;
-        overflow: hidden;
-        white-space: nowrap;
         margin-bottom: 12px;
-        margin-left: -107px;
+
+        animation: marquee 4s linear infinite reverse;
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(calc(-50% - 10px), 0);
     }
 }

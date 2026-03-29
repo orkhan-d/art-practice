@@ -5,11 +5,13 @@
     margin-top: 150px;
     gap: 20px;
 
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 48px;
+    padding-right: 48px;
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: 900px) {
         margin-top: 100px;
+        padding-right: 10px;
+        padding-left: 10px;
     }
 }
 
@@ -22,7 +24,7 @@
     line-height: 100%;
     letter-spacing: 2%;
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: 900px) {
         font-size: 40px;
 
         br {
@@ -42,7 +44,7 @@
     align-items: center;
     flex-direction: row;
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: 900px) {
         align-items: stretch;
         flex-direction: column;
         gap: 24px;
@@ -62,7 +64,7 @@
     opacity: 30%;
     white-space: nowrap;
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: 900px) {
         font-size: 18px;
         white-space: wrap;
     }
@@ -78,7 +80,7 @@
 
     margin-left: auto;
 
-    @media screen and (max-width: 779px) {
+    @media screen and (max-width: 900px) {
         width: 100%;
         margin-left: 0;
         font-size: 14px;
@@ -94,19 +96,24 @@
 
     height: 800px;
 
-    @media screen and (max-width: 779px) {
+    z-index: 100;
+
+    @media screen and (max-width: 900px) {
         height: 250px;
     }
 
     .trash-icon {
+        /* add shadow on the top of the trash can */
+        box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.5);
+
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
         position: absolute;
-        width: 40vw;
+        width: 60vw;
 
-        @media screen and (max-width: 779px) {
-            width: 80vw;
+        @media screen and (max-width: 900px) {
+            width: 50vw;
         }
     }
 
@@ -117,7 +124,7 @@
         position: absolute;
         width: 20%;
 
-        @media screen and (max-width: 779px) {
+        @media screen and (max-width: 900px) {
             width: 40%;
         }
     }

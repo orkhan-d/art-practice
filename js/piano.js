@@ -8,8 +8,10 @@ pianoKeys.forEach((key) => {
 		const note = key.getAttribute("data-note");
 		
 		if (pianoDisplay.textContent.length < 4) {
-			pianoDisplay.textContent = pianoDisplay.textContent.trim() + note;
-			// playNote(note);
+			// getting piano key own text
+			const text = [...key.childNodes].filter(node => node.nodeType === Node.TEXT_NODE)[0].textContent
+			pianoDisplay.textContent = pianoDisplay.textContent.trim() + text.trim();
+			playNote(note);
 		} else {
 			// TODO: find another sound
 		}
@@ -17,9 +19,6 @@ pianoKeys.forEach((key) => {
 });
 
 function playNote(note) {
-	// add note to display
-	// TODO: change to valid audio file path
-	// const audio = new Audio(`assets/sounds/${note}.mp3`);
-	const audio = new Audio(`assets/sounds/1.mp3`);
+	const audio = new Audio(`assets/sounds/${note}.mp3`);
 	audio.play();
 }

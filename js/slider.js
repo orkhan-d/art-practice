@@ -1,4 +1,4 @@
-if (window.innerWidth > 779) {
+if (window.innerWidth > 900) {
 	// add slider-desktop.js to the page
 	const script = document.createElement("script");
 	script.src = "js/slider-desktop.js";

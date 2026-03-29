@@ -6,14 +6,20 @@
 
     flex-direction: row;
     margin-top: 65px;
-    width: 100%;
     overflow: visible;
 
-    @media (max-width: 779px) {
+    margin-left: 48px;
+    margin-right: 48px;
+
+    @media (max-width: 900px) {
         flex-direction: column;
         align-items: stretch;
         justify-content: center;
         margin-top: 0;
+
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
     }
 
     .banner-content {
@@ -22,9 +28,8 @@
         align-items: start;
         justify-content: space-between;
         gap: 8px;
-        width: min-content;
 
-        @media (max-width: 779px) {
+        @media (max-width: 900px) {
             width: 100vw;
         }
 
@@ -35,14 +40,14 @@
             letter-spacing: 2%;
 
             font-size: 110px;
-            @media (max-width: 779px) {
+            @media (max-width: 900px) {
                 padding: 10px;
                 font-size: 48px;
-                width: fit-content;
             }
         }
 
         .banner-button {
+            cursor: default;
             font-family: "Manrope", sans-serif;
             font-weight: 700;
             font-size: 40px;
@@ -60,7 +65,17 @@
                 }
             }
 
-            @media (max-width: 779px) {
+            br {
+                display: none;
+            }
+
+            @media (max-width: 520px) {
+                br {
+                    display: block;
+                }
+            }
+
+            @media (max-width: 900px) {
                 width: 100%;
                 text-align: start;
                 padding: 12px;
@@ -80,7 +95,7 @@
             margin-right: 40px;
         }
 
-        @media (max-width: 779px) {
+        @media (max-width: 900px) {
             margin-right: 16px;
             margin-top: -60px;
             align-self: flex-end;
@@ -105,7 +120,7 @@
                 padding: 10px;
                 transform-origin: center;
 
-                @media (max-width: 779px) {
+                @media (max-width: 900px) {
                     .glasses-rotator-svg {
                         width: 160px;
                         height: auto;
@@ -121,7 +136,7 @@
             line-height: 100%;
             letter-spacing: 2%;
 
-            @media (max-width: 779px) {
+            @media (max-width: 900px) {
                 display: none;
             }
         }

@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Angry';
+    font-family: "Angry";
     font-style: normal;
     font-weight: 400;
     src: url('../fonts/angry/Angry.otf') format('opentype');
@@ -21,7 +21,7 @@
 }
 
 .angry {
-    font-family: 'Angry', sans-serif;
+    font-family: "Angry", sans-serif;
 }
 
 .manrope {

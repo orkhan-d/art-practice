@@ -24,20 +24,48 @@ const moveElevator = () => {
     const leftToTop = elevator.getBoundingClientRect().top + profile.getBoundingClientRect().height / 2;
     const leftToTarget = target.getBoundingClientRect().top + profile.getBoundingClientRect().height / 2;
     
-    if (window.innerHeight / 2 - leftToTarget > 0) {
-        profile.style.position = "absolute";
-        profile.style.top = `calc(100% - ${profile.getBoundingClientRect().height}px)`;
-    } else
-    if (window.innerHeight / 2 - leftToTop > 0) {
+    // check if user is at the bottom of the page
+    const offsetFromBottom = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
+    if (offsetFromBottom < 100 && window.innerWidth <= 900) {
+        profile.style.top = `80%`;
+        profile.style.transition = `left 0.3s linear, top 1s ease-out`;
+        return;
+    }
+    
+    if (leftToTarget < window.innerHeight / 2) {
         profile.style.position = "fixed";
         profile.style.top = `${window.innerHeight / 2 - profile.getBoundingClientRect().height / 2}px`;
+        
+        if (window.innerWidth <= 900) {
+            profile.style.setProperty("--social-elevator-profile-left", `${target.getBoundingClientRect().left + target.getBoundingClientRect().width / 2 - profile.getBoundingClientRect().width / 2}px`);
+        }
+    } else if (window.innerHeight / 2 - leftToTarget > 0) {
+        profile.style.position = "absolute";
+        profile.style.top = `calc(100% - ${profile.getBoundingClientRect().height}px)`;
+        // remove property to reset left
+        if (window.innerWidth <= 900) {
+            profile.style.removeProperty("--social-elevator-profile-left");
+        }
+        profile.style.transition = `left 0.3s linear`;
+    } else if (window.innerHeight / 2 - leftToTop > 0) {
+        profile.style.position = "fixed";
+        profile.style.top = `${window.innerHeight / 2 - profile.getBoundingClientRect().height / 2}px`;
+        
+        if (window.innerWidth <= 900) {
+        profile.style.removeProperty("--social-elevator-profile-left");
+            profile.style.transition = `left 0.3s linear`;
+        }
     } else {
         profile.style.position = "absolute";
         profile.style.top = "0";
+        profile.style.transition = `left 0.3s linear`;
     }
     
     const offsetPercent = (profile.getBoundingClientRect().top - elevator.getBoundingClientRect().top) / (target.getBoundingClientRect().top - elevator.getBoundingClientRect().top);
     const offsetPercentClamped = Math.max(0, Math.min(1, offsetPercent));
+    
+    const newShakeDeltaPx = (8 * offsetPercentClamped);
+    profile.style.setProperty("--shake-delta-px", `${newShakeDeltaPx}px`);
     
     profileNonTargetElements.forEach(el => {
         el.style.opacity = 1 - offsetPercentClamped;
@@ -58,11 +86,9 @@ const changeCardOpacity = () => {
         
         if (distance > 0) {
             card.style.opacity = 1;
-            return;
         } else if (-distance < maxDistance / 10) {
             card.style.opacity = 1;
         } else {
-            // change based on distance, but cap it at 0
             card.style.opacity = Math.max(0, 1 - -distance / maxDistance);
         }
     });

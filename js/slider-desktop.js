@@ -40,9 +40,33 @@ thumb.addEventListener("touchstart", (e) => {
 });
 
 
+const onResize = () => {
+	const trackRect = track.getBoundingClientRect();
+	const thumbRect = thumb.getBoundingClientRect();
+	
+	// Ensure the thumb stays within the track bounds
+	let newPosition = thumbRect.left - trackRect.left;
+	if (newPosition < 0) newPosition = 0;
+	if (newPosition > trackRect.width) newPosition = trackRect.width;
+	
+	thumb.style.left = `${newPosition}px`;
+	sliderGoodWrapper.style.clipPath = `inset(0 ${track.offsetWidth - newPosition - separatorWidth / 2}px 0 0)`;
+	sliderGoodTitle.style.clipPath = `inset(0 ${track.offsetWidth - newPosition - separatorWidth / 2}px 0 0)`;
+	
+	sliderBadTitle.style.clipPath = `inset(0 0 0 ${newPosition + separatorWidth / 2}px)`;
+	sliderBadWrapper.style.clipPath = `inset(0 0 0 ${newPosition + separatorWidth / 2}px)`;
+	separator.style.left = `${newPosition - separatorWidth / 2}px`;
+}
+
+window.addEventListener("resize", onResize);
+
+
 const onMouseMove = (e) => {
 	if (!isSliderDragging) return;
-	let newPosition = e.clientX - position;
+
+	const x = e.clientX || (e.touches ? e.touches[0].clientX : 0);
+	
+	let newPosition = x - position;
 	const trackRect = track.getBoundingClientRect();
 	const minPosition = 0;
 	const maxPosition = trackRect.width;
